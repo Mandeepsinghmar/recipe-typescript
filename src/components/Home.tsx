@@ -1,21 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import {
-  Typography,
-  Box,
-  Card,
-  CardContent,
-  CardActions,
-  CardMedia,
-  Button,
-  Icon,
-  CircularProgress,
-} from '@mui/material';
+import { Typography, Box, Button, CircularProgress } from '@mui/material';
 
 import Search from './Search';
 import { fetchData } from '../utils/fetchData';
 import RecipeCard from './RecipeCard';
 
-interface iRecipe {
+export interface IRecipe {
   id: number;
   thumbnail_url: string;
   name: string;
@@ -24,9 +14,15 @@ interface iRecipe {
   }[];
 }
 
+interface ITags {
+  id: React.Key | null | undefined;
+  display_name: string;
+  name: string;
+}
+
 const Home: React.FC = () => {
-  const [tags, setTags] = useState<any | null>();
-  const [recipes, setRecipes] = useState<any | null>([]);
+  const [tags, setTags] = useState<ITags[]>([]);
+  const [recipes, setRecipes] = useState<IRecipe[]>([]);
   const [tagName, setTagName] = useState<string>('under_30_minutes');
   const [tagDisplayName, setTagDisplayName] = useState<string>('');
   const [loadingRecipes, setLoadingRecipes] = useState<boolean>(false);
@@ -60,25 +56,19 @@ const Home: React.FC = () => {
 
   return (
     <Box>
-      <Search
-        setRecipesData={setRecipes}
-        setLoading={setLoadingRecipes}
-        setHeadingName={setTagDisplayName}
-      />
       <Box
         sx={{
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
           flexDirection: 'column',
-          marginTop: 4,
         }}
       >
-        <Typography sx={{ color: '#e40754', fontSize: 25 }}>
-          Choose a Category
+        <Typography sx={{ color: '#e40754', fontSize: 25, mt: 2 }}>
+          Choose Your Favourite
         </Typography>
         <Typography
-          sx={{ fontWeight: 900, fontSize: 40, color: '#edf6f9', mb: 4 }}
+          sx={{ fontWeight: 900, fontSize: 35, color: '#edf6f9', mb: 2, p: 1 }}
         >
           Recipe Categories
         </Typography>
@@ -95,36 +85,35 @@ const Home: React.FC = () => {
           }}
         >
           {!loadingTags ? (
-            tags?.map(
-              (tag: {
-                id: React.Key | null | undefined;
-                display_name: string;
-                name: string;
-              }) => (
-                <Box key={tag.id}>
-                  <Button
-                    variant='outlined'
-                    size='small'
-                    sx={{
-                      borderRadius: 2,
-                      fontWeight: 700,
-                      color: '#edf6f9',
-                    }}
-                    onClick={() => {
-                      setTagDisplayName(tag.display_name);
-                      setTagName(tag.name);
-                    }}
-                  >
-                    {tag.display_name}
-                  </Button>
-                </Box>
-              )
-            )
+            tags?.map((tag: ITags) => (
+              <Box key={tag.id}>
+                <Button
+                  variant='outlined'
+                  size='small'
+                  sx={{
+                    borderRadius: 2,
+                    fontWeight: 700,
+                    color: '#edf6f9',
+                    borderColor: '#3d3d3d',
+                  }}
+                  onClick={() => {
+                    setTagDisplayName(tag.display_name);
+                    setTagName(tag.name);
+                  }}
+                >
+                  {tag.display_name}
+                </Button>
+              </Box>
+            ))
           ) : (
             <CircularProgress sx={{ color: '#e40754' }} />
           )}
         </Box>
-
+        <Search
+          setRecipesData={setRecipes}
+          setLoading={setLoadingRecipes}
+          setHeadingName={setTagDisplayName}
+        />
         <Box
           sx={{
             display: 'flex',
@@ -149,14 +138,16 @@ const Home: React.FC = () => {
               flexWrap: 'wrap',
               justifyContent: 'space-between',
               gap: 2,
+              alignItems: 'center',
+              p: 3,
             }}
           >
             {!loadingRecipes ? (
-              recipes?.map((recipe: iRecipe) => (
+              recipes?.map((recipe: IRecipe) => (
                 <RecipeCard
                   key={recipe.id}
                   id={recipe.id}
-                  image={recipe.thumbnail_url}
+                  thumbnail_url={recipe.thumbnail_url}
                   name={recipe.name}
                   credits={recipe.credits}
                 />

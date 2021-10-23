@@ -3,14 +3,13 @@ import { Typography, Box, Button, CircularProgress } from '@mui/material';
 import { useParams } from 'react-router-dom';
 
 import { fetchData } from '../utils/fetchData';
-import { TagFacesTwoTone } from '@mui/icons-material';
 
-interface Params {
+interface IParams {
   id: string | undefined;
 }
 
 const RecipeDetails: React.FC = () => {
-  const { id } = useParams<Params>();
+  const { id } = useParams<IParams>();
   const [details, setDetails] = useState<any | null>({});
 
   useEffect(() => {
@@ -22,6 +21,7 @@ const RecipeDetails: React.FC = () => {
     };
     fetchRecipeDetails();
   }, []);
+
   const {
     name,
     thumbnail_url,
@@ -30,8 +30,8 @@ const RecipeDetails: React.FC = () => {
     instructions,
     nutrition,
     sections,
+    description,
   } = details;
-  console.log(details, nutrition?.length);
   return (
     <>
       {details ? (
@@ -63,6 +63,7 @@ const RecipeDetails: React.FC = () => {
               >
                 {name}
               </Typography>
+
               <Typography sx={{ color: '#e40754', fontSize: 20 }}>
                 {credits && credits[0]?.name}
               </Typography>
@@ -80,6 +81,11 @@ const RecipeDetails: React.FC = () => {
               <Typography sx={{ color: '#e40754' }}>Servings</Typography>
             </Box>
           </Box>
+          <Typography
+            sx={{ fontSize: 23, color: '#edf6f9', fontWeight: 800, p: 3 }}
+          >
+            {description}
+          </Typography>
           <Box>
             <Typography
               sx={{
@@ -132,8 +138,9 @@ const RecipeDetails: React.FC = () => {
 
               {sections &&
                 sections[0]?.components?.map(
-                  (item: { raw_text: string | undefined }) => (
+                  (item: { raw_text: string | undefined }, idx: number) => (
                     <Typography
+                      key={idx}
                       sx={{
                         fontSize: 18,
                         fontWeight: 500,
@@ -146,8 +153,16 @@ const RecipeDetails: React.FC = () => {
                   )
                 )}
             </Box>
-            {nutrition?.length && (
-              <Box sx={{ mt: 4, mb: 2 }}>
+            {nutrition && Object.keys(nutrition).length && (
+              <Box
+                sx={{
+                  mt: 4,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  gap: 2,
+                }}
+              >
                 <Typography
                   sx={{
                     fontSize: 25,

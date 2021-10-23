@@ -6,16 +6,18 @@ import './index.css';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
 import RecipeDetails from './components/RecipeDetails';
+import Footer from './components/Footer';
 
 const App: React.FC = () => {
   return (
     <Router>
-      <Box sx={{ background: '#000814' }}>
+      <Box sx={{ width: '100vw' }}>
         <Navbar />
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/recipe-details/:id' component={RecipeDetails} />
         </Switch>
+        <Footer />
       </Box>
     </Router>
   );

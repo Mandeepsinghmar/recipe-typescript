@@ -1,26 +1,14 @@
-.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
-  border-radius: 30px !important;
-}
-.css-o69gx8-MuiCardMedia-root:hover {
-  background-color: #e40754;
-  color: #edf6f9;
-  transition: 0.2s ease-in;
-  transform: scale(1.09);
-}
-.MuiBox-root css-186jwqk {
-  margin: 0px !important;
-  padding: 0px !important;
-}
-
 html,
 body {
-  margin: 0px;
-  padding: 0px;
   background-color: #000814;
-  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
 }
+
+/* scroolbar */
+
 ::-webkit-scrollbar {
-  width: 1px;
+  width: 4px;
 }
 
 ::-webkit-scrollbar-track {
@@ -29,4 +17,25 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: #e40754;
+}
+
+/* searchbar */
+
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+  border: none !important;
+}
+
+/* recipe card */
+
+.css-1jk1tfu-MuiPaper-root-MuiCard-root:hover {
+  background-color: #e40754;
+  color: #edf6f9;
+  transition: 0.2s ease-in;
+  transform: scale(1.09);
+}
+
+/* tags  */
+
+.css-uw63ed-MuiButtonBase-root-MuiButton-root:hover {
+  border-color: #edf6f9 !important;
 }
