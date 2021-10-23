@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Typography, Box, Button, CircularProgress } from '@mui/material';
+import { Typography, Box, CircularProgress } from '@mui/material';
 import { useParams } from 'react-router-dom';
 
 import { fetchData } from '../utils/fetchData';
@@ -20,7 +20,7 @@ const RecipeDetails: React.FC = () => {
       setDetails(data);
     };
     fetchRecipeDetails();
-  }, []);
+  }, [id]);
 
   const {
     name,
