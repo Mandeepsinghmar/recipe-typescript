@@ -79,8 +79,9 @@ const Search: React.FC<Props> = ({
           marginTop: 3,
           background: '#ffffff',
           border: 'none',
-          borderRadius: 20,
+          borderRadius: 2,
           mb: 5,
+          outline: 'none',
         }}
         onChange={(
           e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>

@@ -20,47 +20,26 @@ body {
   background: #e40754;
 }
 
-/* searchbar */
-.css-1wrrcw0-MuiFormControl-root-MuiTextField-root:focus {
-  width: 450px !important;
-}
-.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
-  border: none !important;
-}
-.css-gn4mt4-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
-  display: none;
-}
-.css-rp6sv4-MuiFormLabel-root-MuiInputLabel-root {
-  color: #2b394e !important;
-  font-weight: 700 !important;
-  margin-left: 10px;
-}
 /* recipe card */
-.css-o69gx8-MuiCardMedia-root {
+
+.recipe-image {
   transition: all 0.5s ease-in-out;
 }
-.css-o69gx8-MuiCardMedia-root:hover,
 .recipe-image:hover {
   transform: scale(0.9);
 }
-.css-1jk1tfu-MuiPaper-root-MuiCard-root {
+.recipe-card {
   box-shadow: none !important;
 }
 
 /* go back button  */
 
-.css-1nzu4hs-MuiButtonBase-root-MuiButton-root:hover {
+.btn:hover {
   color: #2b394e;
-}
-
-/* pagination button  */
-
-.css-dp6013-MuiButtonBase-root-MuiButton-root:hover {
-  color: #2b394e !important;
 }
 
 /* tags  */
 
-.css-uw63ed-MuiButtonBase-root-MuiButton-root:hover {
+.tag-btn:hover {
   border-color: #edf6f9 !important;
 }

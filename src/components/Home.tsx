@@ -101,6 +101,7 @@ const Home: React.FC = () => {
                 <Button
                   variant='outlined'
                   size='small'
+                  className='tag-btn'
                   sx={{
                     borderRadius: 2,
                     fontWeight: 700,
@@ -180,6 +181,7 @@ const Home: React.FC = () => {
             <Button
               disabled={loadingRecipes || page <= 1}
               onClick={() => setPage(page - 1)}
+              className='btn'
               sx={{
                 background: '#e40754',
                 color: '#edf6f9',
@@ -195,6 +197,7 @@ const Home: React.FC = () => {
               {page} of {totalNumberOfPages}
             </Typography>
             <Button
+              className='btn'
               disabled={loadingRecipes || page >= (totalNumberOfPages || 0)}
               onClick={() => setPage(page + 1)}
               sx={{

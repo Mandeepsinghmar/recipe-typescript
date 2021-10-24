@@ -80,6 +80,7 @@ const SuggestedRecipes: React.FC<IProps> = ({ queryName, id }) => {
       </Box>
       <Link to='/' style={{ textDecoration: 'none' }}>
         <Button
+          className='btn'
           sx={{
             background: '#e40754',
             color: '#edf6f9',

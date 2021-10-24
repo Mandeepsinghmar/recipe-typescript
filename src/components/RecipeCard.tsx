@@ -8,6 +8,7 @@ const RecipeCard: React.FC<IProps> = ({ thumbnail_url, name, id, credits }) => {
   return (
     <Link to={`/recipe-details/${id}`} style={{ textDecoration: 'none' }}>
       <Card
+        className='recipe-card'
         sx={{
           width: 345,
           height: 360,
@@ -19,6 +20,7 @@ const RecipeCard: React.FC<IProps> = ({ thumbnail_url, name, id, credits }) => {
           height='250'
           image={thumbnail_url}
           alt='green iguana'
+          className='recipe-image'
         />
         <CardContent>
           <Typography sx={{ fontSize: 20, fontWeight: 900 }}>{name}</Typography>
