@@ -59,13 +59,19 @@ const SuggestedRecipes: React.FC<IProps> = ({ queryName, id }) => {
         {!loadingRecipes ? (
           recipes.length !== 0 ? (
             recipes.map((recipe: IRecipe) => (
-              <RecipeCard
+              <Box
                 key={recipe.id}
-                id={recipe.id}
-                thumbnail_url={recipe.thumbnail_url}
-                name={recipe.name}
-                credits={recipe.credits}
-              />
+                onClick={() => {
+                  window.scrollTo(900, 0);
+                }}
+              >
+                <RecipeCard
+                  id={recipe.id}
+                  thumbnail_url={recipe.thumbnail_url}
+                  name={recipe.name}
+                  credits={recipe.credits}
+                />
+              </Box>
             ))
           ) : (
             <Typography
