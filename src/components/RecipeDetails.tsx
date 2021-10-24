@@ -38,7 +38,7 @@ const RecipeDetails: React.FC = () => {
   return (
     <>
       {details && Object.keys(details).length ? (
-        <Box sx={{ maxWidth: '1200px', margin: '20px auto' }}>
+        <Box sx={{ maxWidth: '1200px', margin: '20px auto', p: 1 }}>
           <Box
             sx={{
               display: 'flex',
@@ -48,7 +48,7 @@ const RecipeDetails: React.FC = () => {
               flexWrap: 'wrap',
             }}
           >
-            <Box>
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
               <img
                 src={thumbnail_url}
                 alt={name}
@@ -60,6 +60,23 @@ const RecipeDetails: React.FC = () => {
                   transition: 'all 0.5s ease-in-out',
                 }}
               />
+              <a
+                href='https://tasty.co/'
+                target='_blank'
+                rel='noreferrer'
+                style={{
+                  color: '#edf6f9',
+                  fontSize: '22px',
+                  fontWeight: 'bold',
+                  textDecoration: 'none',
+                }}
+              >
+                <Typography
+                  sx={{ fontSize: 20, color: '#e40754', fontWeight: '800' }}
+                >
+                  Go to Tasty.com
+                </Typography>
+              </a>
             </Box>
 
             <Box>
@@ -92,7 +109,7 @@ const RecipeDetails: React.FC = () => {
             </Box>
           </Box>
           <Typography
-            sx={{ fontSize: 23, color: '#edf6f9', fontWeight: 800, p: 3 }}
+            sx={{ fontSize: 23, color: '#edf6f9', fontWeight: 800, p: 1 }}
           >
             {description}
           </Typography>
@@ -118,7 +135,10 @@ const RecipeDetails: React.FC = () => {
                     key={idx}
                     sx={{ fontSize: 18, fontWeight: 500, color: '#edf6f9' }}
                   >
-                    <span> {idx + 1}. </span>
+                    <span style={{ marginRight: '2px', fontWeight: 'bold' }}>
+                      {' '}
+                      {idx + 1}.{' '}
+                    </span>{' '}
                     {instruction.display_text}
                   </Typography>
                 )
