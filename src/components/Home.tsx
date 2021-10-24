@@ -4,6 +4,7 @@ import { Typography, Box, Button, CircularProgress } from '@mui/material';
 import Search from './Search';
 import { fetchData } from '../utils/fetchData';
 import RecipeCard from './RecipeCard';
+import { setSourceMapRange } from 'typescript';
 
 export interface IRecipe {
   id: number;
@@ -27,6 +28,8 @@ const Home: React.FC = () => {
   const [tagDisplayName, setTagDisplayName] = useState<string>('');
   const [loadingRecipes, setLoadingRecipes] = useState<boolean>(false);
   const [loadingTags, setLoadingTags] = useState<boolean>(false);
+  const [page, setPage] = useState<number>(1);
+  const [numberOfRecipes, setNumberOfRecipes] = useState<number | undefined>(0);
 
   useEffect(() => {
     const fetchRecipeTags = async () => {
@@ -43,16 +46,19 @@ const Home: React.FC = () => {
     const fetchRecipesData = async () => {
       setLoadingRecipes(true);
       const recipesList = await fetchData(
-        `https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=${tagName}`
+        `https://tasty.p.rapidapi.com/recipes/list?from=${
+          page * 20 - 20
+        }&size=20&tags=${tagName}`
       );
+      setNumberOfRecipes(recipesList.count);
       setRecipes(recipesList.results);
       setLoadingRecipes(false);
     };
 
     fetchRecipesData();
-  }, [tagName]);
+  }, [tagName, page]);
 
-  console.log(recipes, tags);
+  const totalNumberOfPages = numberOfRecipes && Math.ceil(numberOfRecipes / 20);
 
   return (
     <Box>
@@ -131,7 +137,45 @@ const Home: React.FC = () => {
           >
             {tagDisplayName || 'Best Recipes'}
           </Typography>
-
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              gap: 5,
+              m: 2,
+            }}
+          >
+            <Button
+              disabled={loadingRecipes || page <= 1}
+              onClick={() => setPage(page - 1)}
+              sx={{
+                background: '#e40754',
+                color: '#edf6f9',
+                fontWeight: '800',
+                fontSize: 15,
+              }}
+            >
+              prev
+            </Button>
+            <Typography
+              sx={{ fontWeight: 900, fontSize: 30, color: '#edf6f9' }}
+            >
+              {page} of {totalNumberOfPages}
+            </Typography>
+            <Button
+              disabled={loadingRecipes || page >= (totalNumberOfPages || 0)}
+              onClick={() => setPage(page + 1)}
+              sx={{
+                background: '#e40754',
+                color: '#edf6f9',
+                fontWeight: '800',
+                fontSize: 15,
+              }}
+            >
+              next
+            </Button>
+          </Box>
           <Box
             sx={{
               display: 'flex',

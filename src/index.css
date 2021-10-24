@@ -26,14 +26,16 @@ body {
 }
 
 /* recipe card */
-
-.css-1jk1tfu-MuiPaper-root-MuiCard-root:hover {
-  background-color: #e40754;
-  color: #edf6f9;
-  transition: 0.2s ease-in;
-  transform: scale(1.09);
+.css-o69gx8-MuiCardMedia-root {
+  transition: all 0.5s ease-in-out;
+}
+.css-o69gx8-MuiCardMedia-root:hover {
+  transform: scale(0.9);
 }
 
+.css-1nzu4hs-MuiButtonBase-root-MuiButton-root {
+  border: 1px solid #e40754 !important;
+}
 /* tags  */
 
 .css-uw63ed-MuiButtonBase-root-MuiButton-root:hover {

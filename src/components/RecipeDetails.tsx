@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Typography, Box, CircularProgress } from '@mui/material';
 import { useParams } from 'react-router-dom';
+import StarIcon from '@mui/icons-material/Star';
 
 import { fetchData } from '../utils/fetchData';
+import SuggestedRecipes from './SuggestedRecipes';
 
 interface IParams {
   id: string | undefined;
@@ -31,11 +33,12 @@ const RecipeDetails: React.FC = () => {
     nutrition,
     sections,
     description,
+    tags,
   } = details;
   return (
     <>
       {details ? (
-        <Box sx={{ maxWidth: '1100px', margin: '20px auto', p: 2 }}>
+        <Box sx={{ maxWidth: '1200px', margin: '20px auto' }}>
           <Box
             sx={{
               display: 'flex',
@@ -63,6 +66,11 @@ const RecipeDetails: React.FC = () => {
               >
                 {name}
               </Typography>
+              <StarIcon sx={{ color: '#e40754' }} />
+              <StarIcon sx={{ color: '#e40754' }} />
+              <StarIcon sx={{ color: '#e40754' }} />
+              <StarIcon sx={{ color: '#e40754' }} />
+              <StarIcon sx={{ color: '#e40754' }} />
 
               <Typography sx={{ color: '#e40754', fontSize: 20 }}>
                 {credits && credits[0]?.name}
@@ -205,6 +213,9 @@ const RecipeDetails: React.FC = () => {
                 </Typography>
               </Box>
             )}
+          </Box>
+          <Box>
+            <SuggestedRecipes queryName={tags && tags[0]?.name} id={id} />
           </Box>
         </Box>
       ) : (
