@@ -37,7 +37,7 @@ const RecipeDetails: React.FC = () => {
   } = details;
   return (
     <>
-      {details ? (
+      {details && Object.keys(details).length ? (
         <Box sx={{ maxWidth: '1200px', margin: '20px auto' }}>
           <Box
             sx={{
@@ -52,10 +52,12 @@ const RecipeDetails: React.FC = () => {
               <img
                 src={thumbnail_url}
                 alt={name}
+                className='recipe-image'
                 style={{
                   maxWidth: '450px',
                   height: '400px',
                   borderRadius: '10px',
+                  transition: 'all 0.5s ease-in-out',
                 }}
               />
             </Box>
@@ -219,7 +221,16 @@ const RecipeDetails: React.FC = () => {
           </Box>
         </Box>
       ) : (
-        <CircularProgress sx={{ color: '#e40754' }} />
+        <Box
+          sx={{
+            height: '80vh',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <CircularProgress sx={{ color: '#e40754' }} />
+        </Box>
       )}
     </>
   );

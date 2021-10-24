@@ -11,7 +11,7 @@ import Footer from './components/Footer';
 const App: React.FC = () => {
   return (
     <Router>
-      <Box sx={{ width: '100vw' }}>
+      <Box>
         <Navbar />
         <Switch>
           <Route exact path='/' component={Home} />

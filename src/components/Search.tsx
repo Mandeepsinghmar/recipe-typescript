@@ -49,13 +49,26 @@ const Search: React.FC<Props> = ({
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
-        backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)) , url(
-          'https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/336799.jpg?resize=600:*&output-format=auto&output-quality=auto'
+        backgroundImage: `linear-gradient(to left, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)) , url(
+        'https://img.buzzfeed.com/tasty-app-user-assets-prod-us-east-1/recipes/779e6e46334844f2a1486cb2d7a10118.jpeg'
         )`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
         width: '100%',
         height: 400,
       }}
     >
+      <Typography
+        sx={{
+          color: '#e40754',
+          fontSize: 30,
+          mt: 2,
+          fontFamily: 'Rubik Beastly',
+        }}
+      >
+        Find recipes you can make right now.
+      </Typography>
       <Typography
         sx={{
           fontWeight: 900,
@@ -76,7 +89,7 @@ const Search: React.FC<Props> = ({
           marginTop: 3,
           background: 'white',
           border: 'none',
-          borderRadius: 20,
+          borderRadius: 1,
           mb: 5,
         }}
         onChange={(

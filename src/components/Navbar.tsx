@@ -12,13 +12,14 @@ const Navbar: React.FC = () => {
       }}
     >
       <Link
+        className='logo'
         to='/'
         style={{
           fontSize: '30px',
           padding: '10px',
           textDecoration: 'none',
           color: '#e40754',
-          fontFamily: 'cursive',
+          fontFamily: 'Rampart One',
         }}
       >
         🍽 Yummies

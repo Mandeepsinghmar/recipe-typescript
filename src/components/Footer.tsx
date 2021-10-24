@@ -12,9 +12,10 @@ const Footer: React.FC = () => {
         display: 'flex',
         justifyContent: 'space-between',
         flexWrap: 'wrap',
-        p: 5,
+        p: 3,
         gap: 5,
         borderTop: '1px solid #3d3d3d',
+        alignItems: 'center',
       }}
     >
       <Box>
@@ -25,7 +26,7 @@ const Footer: React.FC = () => {
             padding: '10px',
             textDecoration: 'none',
             color: '#e40754',
-            fontFamily: 'cursive',
+            fontFamily: 'Rampart One',
           }}
         >
           🍽 Yummies
@@ -54,9 +55,30 @@ const Footer: React.FC = () => {
         </Link>
       </Box>
       <Box sx={{ display: 'flex', gap: 5 }}>
-        <TwitterIcon sx={{ color: '#e40754' }} />
-        <FacebookIcon sx={{ color: '#e40754' }} />
-        <InstagramIcon sx={{ color: '#e40754' }} />
+        <Link
+          to='/'
+          style={{
+            textDecoration: 'none',
+          }}
+        >
+          <TwitterIcon sx={{ color: '#e40754' }} />
+        </Link>
+        <Link
+          to='/'
+          style={{
+            textDecoration: 'none',
+          }}
+        >
+          <FacebookIcon sx={{ color: '#e40754' }} />
+        </Link>{' '}
+        <Link
+          to='/'
+          style={{
+            textDecoration: 'none',
+          }}
+        >
+          <InstagramIcon sx={{ color: '#e40754' }} />
+        </Link>
       </Box>
     </Box>
   );

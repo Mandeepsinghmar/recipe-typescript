@@ -4,7 +4,6 @@ import { Typography, Box, Button, CircularProgress } from '@mui/material';
 import Search from './Search';
 import { fetchData } from '../utils/fetchData';
 import RecipeCard from './RecipeCard';
-import { setSourceMapRange } from 'typescript';
 
 export interface IRecipe {
   id: number;
@@ -70,7 +69,14 @@ const Home: React.FC = () => {
           flexDirection: 'column',
         }}
       >
-        <Typography sx={{ color: '#e40754', fontSize: 25, mt: 2 }}>
+        <Typography
+          sx={{
+            color: '#e40754',
+            fontSize: 25,
+            mt: 2,
+            fontFamily: 'Rubik Beastly',
+          }}
+        >
           Choose Your Favourite
         </Typography>
         <Typography
@@ -129,7 +135,9 @@ const Home: React.FC = () => {
             mt: 4,
           }}
         >
-          <Typography sx={{ color: '#e40754', fontSize: 25 }}>
+          <Typography
+            sx={{ color: '#e40754', fontSize: 25, fontFamily: 'Rubik Beastly' }}
+          >
             All for you
           </Typography>
           <Typography

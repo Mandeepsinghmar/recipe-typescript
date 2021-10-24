@@ -23,7 +23,6 @@ const SuggestedRecipes: React.FC<IProps> = ({ queryName, id }) => {
         `https://tasty.p.rapidapi.com/recipes/list?from=0&size=6&tags=${queryName}`
       );
       setRecipes(recipesList.results);
-      console.log(recipesList);
       setLoadingRecipes(false);
     };
 

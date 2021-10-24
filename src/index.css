@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Qahiri&family=Rampart+One&family=Rubik+Beastly&display=swap');
 html,
 body {
   background-color: #000814;
   overflow-x: hidden;
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
 }
 
 /* scroolbar */
@@ -24,18 +24,25 @@ body {
 .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
   border: none !important;
 }
+.css-gn4mt4-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+  color: #e40754 !important;
+}
 
 /* recipe card */
 .css-o69gx8-MuiCardMedia-root {
   transition: all 0.5s ease-in-out;
 }
-.css-o69gx8-MuiCardMedia-root:hover {
+.css-o69gx8-MuiCardMedia-root:hover,
+.recipe-image:hover {
   transform: scale(0.9);
 }
+
+/* go back button  */
 
 .css-1nzu4hs-MuiButtonBase-root-MuiButton-root {
   border: 1px solid #e40754 !important;
 }
+
 /* tags  */
 
 .css-uw63ed-MuiButtonBase-root-MuiButton-root:hover {

@@ -3,7 +3,7 @@ export const fetchData = async (url: string): Promise<any> => {
     method: 'GET',
     headers: {
       'x-rapidapi-host': 'tasty.p.rapidapi.com',
-      'x-rapidapi-key': 'f0021db587msh781fb1cbef39856p11c183jsn45521d5d1c85',
+      'x-rapidapi-key': '04aa6ee496msh844f073e6a9af8dp19a38ajsn9b8d1df10a77',
     },
   });
   const data = await res.json();
