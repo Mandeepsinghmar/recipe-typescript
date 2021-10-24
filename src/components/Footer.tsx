@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
     <Box
       sx={{
         display: 'flex',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         flexWrap: 'wrap',
         p: 3,
         gap: 5,

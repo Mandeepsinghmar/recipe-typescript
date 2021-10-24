@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Typography, CircularProgress, Button } from '@mui/material';
-import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { fetchData } from '../utils/fetchData';
 import RecipeCard from './RecipeCard';
@@ -14,7 +14,6 @@ interface IProps {
 const SuggestedRecipes: React.FC<IProps> = ({ queryName, id }) => {
   const [recipes, setRecipes] = useState<IRecipe[]>([]);
   const [loadingRecipes, setLoadingRecipes] = useState<boolean>(false);
-  const history = useHistory();
 
   useEffect(() => {
     const fetchRecipesData = async () => {
@@ -43,7 +42,6 @@ const SuggestedRecipes: React.FC<IProps> = ({ queryName, id }) => {
           fontSize: 40,
           color: '#2B394E',
           mb: 4,
-          borderBottom: '4px solid #e40754',
         }}
       >
         You may also like
@@ -80,19 +78,20 @@ const SuggestedRecipes: React.FC<IProps> = ({ queryName, id }) => {
           <CircularProgress sx={{ color: '#e40754' }} />
         )}
       </Box>
-      <Button
-        onClick={() => history.push('/')}
-        sx={{
-          background: '#e40754',
-          color: '#edf6f9',
-          m: 2,
-          p: 1,
-          fontWeight: '800',
-          fontSize: 20,
-        }}
-      >
-        Go Back To Home
-      </Button>
+      <Link to='/' style={{ textDecoration: 'none' }}>
+        <Button
+          sx={{
+            background: '#e40754',
+            color: '#edf6f9',
+            m: 2,
+            p: 1,
+            fontWeight: '800',
+            fontSize: 20,
+          }}
+        >
+          Go Back To Home
+        </Button>
+      </Link>
     </Box>
   );
 };
