@@ -61,18 +61,9 @@ const Search: React.FC<Props> = ({
     >
       <Typography
         sx={{
-          color: '#e40754',
-          fontSize: 30,
-          mt: 2,
-        }}
-      >
-        Find recipes you can make right now.
-      </Typography>
-      <Typography
-        sx={{
           fontWeight: 900,
           fontSize: 40,
-          color: 'white',
+          color: '#ffffff',
           mt: 2,
         }}
       >
@@ -86,9 +77,9 @@ const Search: React.FC<Props> = ({
           margin: 'auto',
           width: 360,
           marginTop: 3,
-          background: 'white',
+          background: '#ffffff',
           border: 'none',
-          borderRadius: 1,
+          borderRadius: 20,
           mb: 5,
         }}
         onChange={(

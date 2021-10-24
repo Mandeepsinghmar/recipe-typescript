@@ -21,14 +21,20 @@ body {
 }
 
 /* searchbar */
-
+.css-1wrrcw0-MuiFormControl-root-MuiTextField-root:focus {
+  width: 450px !important;
+}
 .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
   border: none !important;
 }
 .css-gn4mt4-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
   display: none;
 }
-
+.css-rp6sv4-MuiFormLabel-root-MuiInputLabel-root {
+  color: #2b394e !important;
+  font-weight: 700 !important;
+  margin-left: 10px;
+}
 /* recipe card */
 .css-o69gx8-MuiCardMedia-root {
   transition: all 0.5s ease-in-out;

@@ -38,9 +38,15 @@ const SuggestedRecipes: React.FC<IProps> = ({ queryName, id }) => {
       }}
     >
       <Typography
-        sx={{ fontWeight: 900, fontSize: 40, color: '#2B394E', mb: 4 }}
+        sx={{
+          fontWeight: 900,
+          fontSize: 40,
+          color: '#2B394E',
+          mb: 4,
+          borderBottom: '4px solid #e40754',
+        }}
       >
-        Related Recipes
+        You may also like
       </Typography>
       <Box
         sx={{
