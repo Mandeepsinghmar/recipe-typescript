@@ -6,9 +6,9 @@ const Navbar: React.FC = () => {
   return (
     <Box
       sx={{
-        borderBottom: '1px solid #3d3d3d',
         textAlign: 'center',
         p: 2,
+        borderBottom: '1px solid #e3e3e3',
       }}
     >
       <Link

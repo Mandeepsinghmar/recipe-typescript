@@ -74,13 +74,12 @@ const Home: React.FC = () => {
             color: '#e40754',
             fontSize: 25,
             mt: 2,
-            fontFamily: 'Rubik Beastly',
           }}
         >
           Choose Your Favourite
         </Typography>
         <Typography
-          sx={{ fontWeight: 900, fontSize: 35, color: '#edf6f9', mb: 2, p: 1 }}
+          sx={{ fontWeight: 900, fontSize: 35, color: '#2B394E', mb: 2, p: 1 }}
         >
           Recipe Categories
         </Typography>
@@ -105,12 +104,13 @@ const Home: React.FC = () => {
                   sx={{
                     borderRadius: 2,
                     fontWeight: 700,
-                    color: '#edf6f9',
-                    borderColor: '#3d3d3d',
+                    color: '#2B394E',
+                    borderColor: '#2B394E',
                   }}
                   onClick={() => {
                     setTagDisplayName(tag.display_name);
                     setTagName(tag.name);
+                    window.scrollTo(0, 900);
                   }}
                 >
                   {tag.display_name}
@@ -135,55 +135,15 @@ const Home: React.FC = () => {
             mt: 4,
           }}
         >
-          <Typography
-            sx={{ color: '#e40754', fontSize: 25, fontFamily: 'Rubik Beastly' }}
-          >
+          <Typography sx={{ color: '#e40754', fontSize: 25 }}>
             All for you
           </Typography>
           <Typography
-            sx={{ fontWeight: 900, fontSize: 40, color: '#edf6f9', mb: 4 }}
+            sx={{ fontWeight: 900, fontSize: 40, color: '#2B394E', mb: 4 }}
           >
             {tagDisplayName || 'Best Recipes'}
           </Typography>
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              gap: 5,
-              m: 2,
-            }}
-          >
-            <Button
-              disabled={loadingRecipes || page <= 1}
-              onClick={() => setPage(page - 1)}
-              sx={{
-                background: '#e40754',
-                color: '#edf6f9',
-                fontWeight: '800',
-                fontSize: 15,
-              }}
-            >
-              prev
-            </Button>
-            <Typography
-              sx={{ fontWeight: 900, fontSize: 30, color: '#edf6f9' }}
-            >
-              {page} of {totalNumberOfPages}
-            </Typography>
-            <Button
-              disabled={loadingRecipes || page >= (totalNumberOfPages || 0)}
-              onClick={() => setPage(page + 1)}
-              sx={{
-                background: '#e40754',
-                color: '#edf6f9',
-                fontWeight: '800',
-                fontSize: 15,
-              }}
-            >
-              next
-            </Button>
-          </Box>
+
           <Box
             sx={{
               display: 'flex',
@@ -207,6 +167,45 @@ const Home: React.FC = () => {
             ) : (
               <CircularProgress sx={{ color: '#e40754' }} />
             )}
+          </Box>
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              gap: 5,
+              m: 4,
+            }}
+          >
+            <Button
+              disabled={loadingRecipes || page <= 1}
+              onClick={() => setPage(page - 1)}
+              sx={{
+                background: '#e40754',
+                color: '#edf6f9',
+                fontWeight: '800',
+                fontSize: 15,
+              }}
+            >
+              prev
+            </Button>
+            <Typography
+              sx={{ fontWeight: 900, fontSize: 30, color: '#2B394E' }}
+            >
+              {page} of {totalNumberOfPages}
+            </Typography>
+            <Button
+              disabled={loadingRecipes || page >= (totalNumberOfPages || 0)}
+              onClick={() => setPage(page + 1)}
+              sx={{
+                background: '#e40754',
+                color: '#edf6f9',
+                fontWeight: '800',
+                fontSize: 15,
+              }}
+            >
+              next
+            </Button>
           </Box>
         </Box>
       </Box>

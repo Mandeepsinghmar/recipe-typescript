@@ -38,7 +38,7 @@ const SuggestedRecipes: React.FC<IProps> = ({ queryName, id }) => {
       }}
     >
       <Typography
-        sx={{ fontWeight: 900, fontSize: 40, color: '#edf6f9', mb: 4 }}
+        sx={{ fontWeight: 900, fontSize: 40, color: '#2B394E', mb: 4 }}
       >
         Related Recipes
       </Typography>

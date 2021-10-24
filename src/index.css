@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Qahiri&family=Rampart+One&family=Rubik+Beastly&display=swap');
 html,
 body {
-  background-color: #000814;
+  background-color: #ffffff;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 /* scroolbar */
@@ -25,7 +26,7 @@ body {
   border: none !important;
 }
 .css-gn4mt4-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
-  color: #e40754 !important;
+  display: none;
 }
 
 /* recipe card */
@@ -36,11 +37,20 @@ body {
 .recipe-image:hover {
   transform: scale(0.9);
 }
+.css-1jk1tfu-MuiPaper-root-MuiCard-root {
+  box-shadow: none !important;
+}
 
 /* go back button  */
 
-.css-1nzu4hs-MuiButtonBase-root-MuiButton-root {
-  border: 1px solid #e40754 !important;
+.css-1nzu4hs-MuiButtonBase-root-MuiButton-root:hover {
+  color: #2b394e;
+}
+
+/* pagination button  */
+
+.css-dp6013-MuiButtonBase-root-MuiButton-root:hover {
+  color: #2b394e !important;
 }
 
 /* tags  */

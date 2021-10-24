@@ -14,8 +14,8 @@ const Footer: React.FC = () => {
         flexWrap: 'wrap',
         p: 3,
         gap: 5,
-        borderTop: '1px solid #3d3d3d',
         alignItems: 'center',
+        borderTop: '1px solid #e3e3e3',
       }}
     >
       <Box>
@@ -30,28 +30,6 @@ const Footer: React.FC = () => {
           }}
         >
           🍽 Yummies
-        </Link>
-        <Link
-          to='/'
-          style={{
-            fontSize: '20px',
-            padding: '10px',
-            textDecoration: 'none',
-            color: '#e40754',
-          }}
-        >
-          Home
-        </Link>
-        <Link
-          to='/'
-          style={{
-            fontSize: '20px',
-            padding: '10px',
-            textDecoration: 'none',
-            color: '#e40754',
-          }}
-        >
-          Recipes
         </Link>
       </Box>
       <Box sx={{ display: 'flex', gap: 5 }}>

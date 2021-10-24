@@ -60,28 +60,11 @@ const RecipeDetails: React.FC = () => {
                   transition: 'all 0.5s ease-in-out',
                 }}
               />
-              <a
-                href='https://tasty.co/'
-                target='_blank'
-                rel='noreferrer'
-                style={{
-                  color: '#edf6f9',
-                  fontSize: '22px',
-                  fontWeight: 'bold',
-                  textDecoration: 'none',
-                }}
-              >
-                <Typography
-                  sx={{ fontSize: 20, color: '#e40754', fontWeight: '800' }}
-                >
-                  Go to Tasty.com
-                </Typography>
-              </a>
             </Box>
 
             <Box>
               <Typography
-                sx={{ fontSize: 40, color: '#edf6f9', fontWeight: '900' }}
+                sx={{ fontSize: 40, color: '#2B394E', fontWeight: '900' }}
               >
                 {name}
               </Typography>
@@ -100,7 +83,7 @@ const RecipeDetails: React.FC = () => {
                   fontSize: 25,
                   fontWeight: '600',
                   mt: 3,
-                  color: '#edf6f9',
+                  color: '#2B394E',
                 }}
               >
                 {num_servings} Person
@@ -109,7 +92,7 @@ const RecipeDetails: React.FC = () => {
             </Box>
           </Box>
           <Typography
-            sx={{ fontSize: 23, color: '#edf6f9', fontWeight: 800, p: 1 }}
+            sx={{ fontSize: 23, color: '#2B394E', fontWeight: 800, p: 1 }}
           >
             {description}
           </Typography>
@@ -117,7 +100,7 @@ const RecipeDetails: React.FC = () => {
             <Typography
               sx={{
                 fontSize: 25,
-                color: '#edf6f9',
+                color: '#2B394E',
                 fontWeight: '800',
                 mt: 4,
                 mb: 2,
@@ -133,7 +116,7 @@ const RecipeDetails: React.FC = () => {
                 ) => (
                   <Typography
                     key={idx}
-                    sx={{ fontSize: 18, fontWeight: 500, color: '#edf6f9' }}
+                    sx={{ fontSize: 18, fontWeight: 500, color: '#2B394E' }}
                   >
                     <span style={{ marginRight: '2px', fontWeight: 'bold' }}>
                       {' '}
@@ -150,17 +133,15 @@ const RecipeDetails: React.FC = () => {
               display: 'flex',
               justifyContent: 'space-between',
               flexWrap: 'wrap',
-              m: 3,
-              borderTop: '1px solid #3d3d3d',
+              p: 1,
             }}
           >
             <Box sx={{ mt: 4, mb: 2 }}>
               <Typography
                 sx={{
                   fontSize: 25,
-                  color: '#edf6f9',
+                  color: '#2B394E',
                   fontWeight: '800',
-                  p: 2,
                 }}
               >
                 Ingredients
@@ -174,7 +155,7 @@ const RecipeDetails: React.FC = () => {
                       sx={{
                         fontSize: 18,
                         fontWeight: 500,
-                        color: '#edf6f9',
+                        color: '#2B394E',
                         p: 1,
                       }}
                     >
@@ -196,40 +177,39 @@ const RecipeDetails: React.FC = () => {
                 <Typography
                   sx={{
                     fontSize: 25,
-                    color: '#edf6f9',
+                    color: '#2B394E',
                     fontWeight: '800',
-                    p: 2,
                   }}
                 >
                   Nutritions
                 </Typography>
                 <Typography
-                  sx={{ fontSize: 18, fontWeight: 500, color: '#edf6f9' }}
+                  sx={{ fontSize: 18, fontWeight: 500, color: '#2B394E' }}
                 >
                   {nutrition?.calories} Calories
                 </Typography>
                 <Typography
-                  sx={{ fontSize: 18, fontWeight: 500, color: '#edf6f9' }}
+                  sx={{ fontSize: 18, fontWeight: 500, color: '#2B394E' }}
                 >
                   {nutrition?.carbohydrates}gm Carbo
                 </Typography>
                 <Typography
-                  sx={{ fontSize: 18, fontWeight: 500, color: '#edf6f9' }}
+                  sx={{ fontSize: 18, fontWeight: 500, color: '#2B394E' }}
                 >
                   {nutrition?.fat}gm Fat
                 </Typography>
                 <Typography
-                  sx={{ fontSize: 18, fontWeight: 500, color: '#edf6f9' }}
+                  sx={{ fontSize: 18, fontWeight: 500, color: '#2B394E' }}
                 >
                   {nutrition?.fiber}gm fiber
                 </Typography>
                 <Typography
-                  sx={{ fontSize: 18, fontWeight: 500, color: '#edf6f9' }}
+                  sx={{ fontSize: 18, fontWeight: 500, color: '#2B394E' }}
                 >
                   {nutrition?.protein}gm Protein
                 </Typography>
                 <Typography
-                  sx={{ fontSize: 18, fontWeight: 500, color: '#edf6f9' }}
+                  sx={{ fontSize: 18, fontWeight: 500, color: '#2B394E' }}
                 >
                   {nutrition?.sugar}gm Sugar
                 </Typography>

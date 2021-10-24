@@ -64,7 +64,6 @@ const Search: React.FC<Props> = ({
           color: '#e40754',
           fontSize: 30,
           mt: 2,
-          fontFamily: 'Rubik Beastly',
         }}
       >
         Find recipes you can make right now.
